@@ -1,0 +1,270 @@
+html {
+	font-family: 'Kanit', sans-serif !important;
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+	/* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+	box-sizing: inherit;
+}
+
+body {
+	
+	background: #101320;
+	/* Fallback for when there is no custom background color defined. */
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+
+hr {
+	border: 0;
+	@include divider();
+	margin-top: $spacing--shared-v;
+	margin-bottom: $spacing--shared-v;
+}
+
+ul,
+ol {
+	margin-top: 0;
+	padding-left: $spacing--shared-h;
+
+	&:not(:last-child) {
+		margin-bottom: $spacing--shared-v;
+	}
+}
+
+ul {
+	list-style: disc;
+}
+
+ol {
+	list-style: decimal;
+}
+
+li {
+
+	&:not(:last-child) {
+		margin-bottom: $spacing--shared-v / 2;
+	}
+}
+
+li>ul,
+li>ol {
+	margin-top: $spacing--shared-v / 2;
+	margin-bottom: 0;
+}
+
+dl {
+	margin-top: 0;
+	margin-bottom: $spacing--shared-v;
+}
+
+dt {
+	@include font-weight(strong);
+}
+
+dd {
+	margin-left: $spacing--shared-h;
+	margin-bottom: $spacing--shared-v;
+}
+
+img {
+	border-radius: $img-radius;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+img,
+svg,
+video {
+	display: block;
+	height: auto;
+	/* Make sure images are scaled correctly. */
+	max-width: 100%;
+	/* Adhere to container width. */
+}
+
+figure {
+	margin: $spacing--figure-v $spacing--figure-h;
+	/* Extra wide images within figure tags don't overflow the content area. */
+}
+
+figcaption {
+	padding: $spacing--figcaption-v $spacing--figcaption-h;
+}
+
+// input{
+// 	fon
+// }
+// tables
+table,
+th,
+td {
+	// border: 1px solid #e9b452 !important;
+	// border: -1px !important;
+	margin: 0px;
+	border-collapse: collapse;
+	// margin: 0px !important;
+}
+
+td:first-child {
+	padding-left: 10px !important;
+}
+
+td:last-child {
+	color: black;
+}
+
+td:nth-child(2) {
+	font-size: 8px;
+	color: gray;
+}
+td:nth-child(4) {
+	color: black;
+}
+td:nth-child(6) {
+	font-size: 8px;
+	color: gray;
+}
+.inner-image{
+	padding-left: auto;
+	padding-right: auto;
+}
+
+.mdb-datatable-info{
+	display: none;
+	opacity: 0 !important;
+}
+
+table {
+	// @include font-size(table);
+	font-size: 14px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	color: black;
+	background-color: #f8f6eb;
+	// border-collapse: initial;
+	margin-bottom: $spacing--shared-v;
+	// border: 4px ridge #ffdc6a;
+	// border-radius: 12px;
+}
+
+// tr {
+// 	border-bottom: 1px solid color-border(divider);
+// }
+
+th {
+	@include font-weight(strong);
+	width: 20px;
+	padding: 0px;
+	color: #e9b452;
+	text-align: center;
+	background-color: #1a2342;
+}
+
+table.mdb-dataTable thead .sorting_asc:before,
+table.mdb-dataTable thead .sorting_desc:after,
+table thead.mdb-dataTable-head .sorting_asc:before,
+table thead.mdb-dataTable-head .sorting_desc:after {
+	opacity: 0 !important;
+	display: none;
+}
+
+th {
+	// padding: $spacing--table-cell-v $spacing--table-cell-h;
+	// text-align: center;
+	border: 1px;
+	border-color: black;
+
+	&:first-child {
+		padding-left: 0;
+	}
+
+	&:last-child {
+		padding-right: 0;
+	}
+}
+
+td {
+	// padding: $spacing--table-cell-v $spacing--table-cell-h;
+	color: #77502d;
+	// text-align: center;
+	
+	border: 1px;
+	border-color: black;
+
+	&:first-child {
+		padding-left: 0;
+	}
+
+	&:last-child {
+		padding-right: 0;
+	}
+}
+
+.invert-color {
+
+	hr {
+		@include divider(false, inverse);
+	}
+
+	tr {
+		border-bottom: 1px solid color-border(divider-inverse);
+	}
+}
+
+.page-item {
+	display: none;
+}
+
+.mdb-datatable-filter {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.mdb-datatable-length {
+	display: none;
+}
+
+.hero-inner {
+	padding-top: 0px !important;
+}
+
+.contact {
+	border: 1px solid #e9b452 !important;
+	margin-bottom: 5rem;
+}
+
+.section-black {
+	background-color: black;
+}
+.imgPad {
+	padding: 2px;
+}
+@media screen and (max-width: 600px) {
+	td {
+		font-weight: 80;
+		font-size: 6px;
+		padding-right: 0px;
+	}
+	th {
+		font-size: 6px;
+		padding: 0px !important;
+		height: 10px;
+	}
+	td:nth-child(2) {
+		font-size: 4px;
+		color: gray;
+	}
+	td:nth-child(6) {
+		font-size: 4px;
+		color: gray;
+	}
+	// img{
+	// 	width: 20px;
+	// 	height: 20px;
+	// }
+}
